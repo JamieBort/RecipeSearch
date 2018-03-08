@@ -1,45 +1,42 @@
-let recipeBox = document.querySelector(".box")
-let recipes = document.querySelector(".list")
-let content = document.querySelector("#wrapper");
-let button = document.querySelector("#button");
-let search = document.querySelector("#search");
+// give it functionality such that pressing the enter/return key has hte same effect as selecting the Search button.
 
-button.addEventListener("click", function() {
-  fetch("http://crossorigin.mehttp://www.recipepuppy.com/api/?q=search-term=${search.value}")
-    // Data is fetched and we get a promise.
-    .then(
-      // The promise returns a response from the server.
-      function(response) {
-        // We process the response accordingly.
-        if (response.status !== 200) {
-          console.log(response.status);
-          return response.json();
-        }
-      })
-    .then(function(data) {
-      let results = data.results;
-      for (var i = 0; i < results.length; i++) {
-        recipes.innerHTML += `
-          <div class="">
-        <img src=${results[i].thumbnail}>
-        <a href=${results[i].href}><h2 class="title">${results[i].title}</h2></a>
-        </div>
-`
-      }
-    })
+// Formatting the html
 
-    .catch(function(error) {
-      //   // Do something with your JSON.
-      //   // For example, a 'for' loop.
-      console.error(error.message);
-    });
-})
+var body = document.querySelector("body");
+
+var h1 = document.createElement("h1");
+var recipe = document.createTextNode("Recipe");
+h1.appendChild(recipe);
+body.appendChild(h1);
+
+var input = document.createElement("input");
+input.setAttribute("placeholder", "Type an ingredient");
+body.appendChild(input);
 
 
-// response.json().then(function(data) {
-//   // Do something with your JSON.
-//   // For example, a 'for' loop.
-//
-//     console.error(error.message);
-//   });
-// })
+var buttonSearch = document.createElement("button");
+var searchText = document.createTextNode("Search For Recipes");
+buttonSearch.appendChild(searchText);
+body.appendChild(buttonSearch);
+
+var buttonClear = document.createElement("button");
+var clearText = document.createTextNode("Reset / Clear Search");
+buttonClear.appendChild(clearText);
+body.appendChild(buttonClear);
+
+
+// Element.setAttribute(name, value);
+// h1.innerHTML = "Recipe"; // NOTE: 'createTextNode' is favorable to 'innerHTML': https://stackoverflow.com/questions/13122760/is-there-any-major-difference-between-innerhtml-and-using-createtextnode-to-fill
+body.appendChild(h1);
+
+
+
+
+// .innerHTML =         (baseElement.querySelector("div span").innerHTML);
+
+
+// Using the api
+
+// fetch("http://www.recipepuppy.com/api/")
+  // Data is fetched and we get a promise.
+  // .then(
