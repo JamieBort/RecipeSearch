@@ -1,6 +1,9 @@
 ToDo:
+
 ~~1. Refactor this code so that it works correctly.~~ DONE.
+
 2. Work on the CSS file so it looks like the mockup.
+
 
 from: https://newline.theironyard.com/cohorts/15/courses/9/projects/73
 
