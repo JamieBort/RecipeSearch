@@ -3,11 +3,12 @@
 // Formatting the html
 
 var body = document.querySelector("body");
-var h1 = document.createElement("h1");
+
 var header = document.createElement("header")
+var h1 = document.createElement("h1");
 var recipe = document.createTextNode("Recipe");
 
-
+// h1.innerHTML = "Recipe"; // NOTE: 'createTextNode' is favorable to 'innerHTML': https://stackoverflow.com/questions/13122760/is-there-any-major-difference-between-innerhtml-and-using-createtextnode-to-fill
 
 h1.appendChild(recipe);
 body.appendChild(header);
@@ -30,7 +31,21 @@ header.appendChild(buttonClear);
 var section = document.createElement("section")
 body.appendChild(section);
 
-// h1.innerHTML = "Recipe"; // NOTE: 'createTextNode' is favorable to 'innerHTML': https://stackoverflow.com/questions/13122760/is-there-any-major-difference-between-innerhtml-and-using-createtextnode-to-fill
+// Add event listener to button.
+buttonSearch.addEventListener('click', function() {
+  document.innerHTML = "Hello"
+  // document.getElementsByTagName('body').innerHTML = "Hello"
+});
+
+// fetch()
+
+// .then()
+
+// function
+
+// response
+
+
 // body.appendChild(h1);
 
 
