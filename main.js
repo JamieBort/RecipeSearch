@@ -34,41 +34,36 @@ body.appendChild(section);
 // Add event listener to button.
 buttonSearch.addEventListener('click', function() {
   section.innerHTML = "The event listener is working."
-  fetch("https://api.github.com/users/theironyard")
-  // Data is fetched and we get a promise.
-  .then(
-    // The promise returns a response from the server.
-    function(response) {
-      // We process the response accordingly.
-      if (response.status !== 200) {
-        console.log(response.status);
-        return;
+
+  // TODO: HAVE THE INFO ENTERED INTO THE SEARCH FIELD POPLULATE THE END OF THIS URL:
+  fetch("http://www.recipepuppy.com/api/")
+    // Data is fetched and we get a promise.
+    .then(
+      // The promise returns a response from the server.
+      function(response) {
+        // We process the response accordingly.
+        if (response.status !== 200) {
+          console.log(response.status);
+          return;
+        }
+        response.json().then(function(data) {
+          console.log("Here is the data:", data);
+
+          // for each item that comes back create a div:
+            document.createElement("div");
+        });
       }
-      response.json().then(function(data) {
-        console.log("Here is the data:", data);
-      });
-    }
-  )
-  .catch(function(err) {
-    console.log("Fetch Error :-S", err);
-  })});
+    )
+    .catch(function(err) {
+      console.log("Fetch Error :-S", err);
+    })
+});
 
-
-
-// .then()
-
-// function
-
-// response
 
 
 // body.appendChild(h1);
 
-
-
-
 // .innerHTML =         (baseElement.querySelector("div span").innerHTML);
-
 
 // Using the api
 
