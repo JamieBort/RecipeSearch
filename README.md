@@ -1,6 +1,6 @@
 ToDo:
 
-~~1. Refactor this code so that it works correctly.~~ DONE.
+1. ~~Refactor this code so that it works correctly.~~ DONE.
 
 2. Work on the CSS file so it looks like the mockup.
 
