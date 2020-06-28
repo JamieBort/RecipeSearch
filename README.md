@@ -1,4 +1,9 @@
-# NOTE: all of this work is captured in this repo: https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch
+** NOTE:** 
+all of this work is captured in this repo: 
+https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch
+
+below is a duplicate of that repo's readme file.
+---
 
 ## Status
 
