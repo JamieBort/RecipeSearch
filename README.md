@@ -1,3 +1,5 @@
+# NOTE: all of this work is captured in this repo: https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch
+
 ## Status
 
 Mostly done with functionality.

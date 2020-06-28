@@ -9,7 +9,6 @@ var searchButton = document.createElement("button");
 var clearButton = document.createElement("button");
 
 var container = document.createElement("div");
-// var paragraph = document.createElement("p");
 
 // Appending the elements
 divSearch.appendChild(title);
@@ -19,7 +18,6 @@ divSearch.appendChild(searchButton);
 divSearch.appendChild(clearButton);
 
 body.appendChild(container);
-// container.appendChild(paragraph);
 
 // Add attributes
 // TODO: add attributes so that the site conforms to a11y.
