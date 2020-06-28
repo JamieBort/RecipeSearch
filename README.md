@@ -1,11 +1,27 @@
-ToDo:
+## Status
 
-1. ~~Refactor this code so that it works correctly.~~ DONE.
+Mostly done with functionality.
 
-2. Work on the CSS file so it looks like the mockup.
+May want to make it look nice.
 
+See [To Do](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch#to-do) below.
 
-from: https://newline.theironyard.com/cohorts/15/courses/9/projects/73
+## To Do
+
+1. Address the TODO items in the `main.js` file.
+2. Upload to GitHub pages.
+3. Upload to Heroku.
+4. Come back to see how I can build out the functionality using their api. See `Optional Parameters` on the http://www.recipepuppy.com/about/api/ page.
+
+## Recources
+
+This [URL for the  assignment](https://newline.theironyard.com/cohorts/15/courses/9/projects/73) no longer works.
+
+The associated [Recipe Search](https://trello.com/c/gp44nJAM/966-recipe-search?menu=filter&filter=label:Home) Trello card.
+
+The associated [RecipeSearch](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch) GitHub repository directory.
+
+## Assignment
 
 **Recipe Search**
 

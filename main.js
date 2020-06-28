@@ -1,88 +1,112 @@
-// give it functionality such that pressing the enter/return key has hte same effect as selecting the Search button.
-
-// Formatting the html
-
+// Selecting the body tag.
 var body = document.querySelector("body");
 
-var header = document.createElement("header")
-var h1 = document.createElement("h1");
-var recipe = document.createTextNode("Recipe");
+// Creating the elements
+var divSearch = document.createElement("div");
+var title = document.createElement("h3");
+var searchField = document.createElement("input");
+var searchButton = document.createElement("button");
+var clearButton = document.createElement("button");
 
-// h1.innerHTML = "Recipe"; // NOTE: 'createTextNode' is favorable to 'innerHTML': https://stackoverflow.com/questions/13122760/is-there-any-major-difference-between-innerhtml-and-using-createtextnode-to-fill
+var container = document.createElement("div");
+// var paragraph = document.createElement("p");
 
-h1.appendChild(recipe);
-body.appendChild(header);
-header.appendChild(h1);
+// Appending the elements
+divSearch.appendChild(title);
+body.appendChild(divSearch);
+divSearch.appendChild(searchField);
+divSearch.appendChild(searchButton);
+divSearch.appendChild(clearButton);
 
-var input = document.createElement("input");
-input.setAttribute("placeholder", "Type an ingredient");
-header.appendChild(input);
+body.appendChild(container);
+// container.appendChild(paragraph);
 
-var buttonSearch = document.createElement("button");
-var searchText = document.createTextNode("Search For Recipes");
-buttonSearch.appendChild(searchText);
-header.appendChild(buttonSearch);
+// Add attributes
+// TODO: add attributes so that the site conforms to a11y.
+divSearch.setAttribute("id", "divSearchID");
+searchField.setAttribute("id", "searchFieldID");
+// searchField.setAttribute("value", "Name");
+searchField.setAttribute("onfocus", "this.value=''");
 
-var buttonClear = document.createElement("button");
-var clearText = document.createTextNode("Reset / Clear Search");
-buttonClear.appendChild(clearText);
-header.appendChild(buttonClear);
+// searchField.setAttribute("onkeydown", "if (event.keyCode == 13){document.getElementById('searchFieldID').click()}");
+searchField.setAttribute("onkeydown", "enterKeyFunction()");
 
-var section = document.createElement("section")
-body.appendChild(section);
+searchButton.setAttribute("onClick", "searchFunction()");
+clearButton.setAttribute("onClick", "clearFunction()");
+// clearButton.setAttribute("onClick", "clearField()");
 
-// Add event listener to button.
-buttonSearch.addEventListener('click', function() {
-  section.innerHTML = "The event listener is working."
 
-  // TODO: HAVE THE INFO ENTERED INTO THE SEARCH FIELD POPLULATE THE END OF THIS URL:
-  fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?i=${input.value}`) // NOTE: using the following in the URL of the fetch: https://crossorigin.me/ // NOTE: use ticks rather than signle quotes or double quotes in the URL in order to use the object literal notation '${}'.
-    // Data is fetched and we get a promise.
-    .then(
-      // The promise returns a response from the server.
-      function(response) {
-        // We process the response accordingly.
-        if (response.status !== 200) {
-          console.log(response.status);
-          return;
+container.setAttribute("id", "containerID");
+
+// Add text.
+title.innerHTML = "Recipe Search";
+searchButton.innerHTML = "Search";
+clearButton.innerHTML = "Clear";
+
+// Functions
+// NOTE: this may not be working as expected.
+function searchFunction(){
+  console.log(document.getElementById('searchFieldID').value);
+  searchPhrase = document.getElementById('searchFieldID').value;
+
+  fetch("http://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  .then(
+    function(response){
+      console.log("The response status is: ", response.status);
+      response.json().then(function(data) {
+        console.log(data.results);
+
+        for(var i = 0; i<data.results.length; i++){
+
+        // Creating the elements
+        var divResponse = document.createElement("div");
+        var h3 = document.createElement("h3");
+        var paragraph = document.createElement("p");
+        var image = document.createElement("img");
+
+        // Appending the elements
+        container.appendChild(divResponse);
+        divResponse.appendChild(h3);
+        divResponse.appendChild(paragraph);
+        divResponse.appendChild(image);
+
+        // Add attributes
+        // TODO: add attributes so that the site conforms to a11y.
+        // TODO: have a default image for when one is not available.
+        if(data.results[i].thumbnail==""){
+          console.log("Its empty");
+          image.setAttribute("src", "./images/mcdonalds.jpg");
+        } else {
+          image.setAttribute("src", data.results[i].thumbnail);
         }
-        response.json().then(function(data) {
-          console.log("Here is the data:", data);
 
-          // for each item that comes back create a div:
-          for (var i = 0; i < data.results.length; i++) {
-            var div = document.createElement("div");
-            section.appendChild(div);
-            div.innerHTML =
-              `<li><img id="image" src=${data.results[i].thumbnail}></li>
-              <h2>${data.results[i].title}</h2>
-               <li><a href=${data.results[i].href}>${data.results[i].href}</a></li>`
-          }
+        divResponse.setAttribute("id", "divResponse");
 
-          // var div = document.createElement("div");
-          // section.appendChild(div);
-          // console.log(data.title);
-          // console.log(data.results);
-          // console.log(data.results[0]);
-          // console.log(data.results[0].title);
-          // console.log(data.results[0].href);
+        // Add text.
+        h3.innerHTML = data.results[i].title;
+        paragraph.innerHTML = data.results[i].ingredients;
+        }
+      });
+    }
+  )
+  .catch(
+    function(err){
+      console.log("The fetch error: ", err);
+    }
+  );
+}
 
-        });
-      }
-    )
-    .catch(function(err) {
-      console.log("Fetch Error :-S", err);
-    })
-});
+function clearFunction(input){
+  console.log("Clear was performed.");
+  document.getElementById('searchFieldID').value = '';
+  document.getElementById('searchFieldID').focus();
+}
 
-
-
-// body.appendChild(h1);
-
-// .innerHTML =         (baseElement.querySelector("div span").innerHTML);
-
-// Using the api
-
-// fetch("http://www.recipepuppy.com/api/")
-// Data is fetched and we get a promise.
-// .then(
+// NOTE: this may not be working as expected.
+// TODO: refactor this so that enterKeyFunction() is not needed.
+function enterKeyFunction(){
+  if (event.keyCode == 13){
+    console.log("Enter Key hit");
+    searchFunction();
+    }
+}
