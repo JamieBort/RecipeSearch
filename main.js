@@ -47,7 +47,7 @@ function searchFunction(){
   console.log(document.getElementById('searchFieldID').value);
   searchPhrase = document.getElementById('searchFieldID').value;
 
-  fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  fetch("http://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
   .then(
     function(response){
       console.log("The response status is: ", response.status);
@@ -74,7 +74,19 @@ function searchFunction(){
         if(data.results[i].thumbnail==""){
           image.setAttribute("src", "./images/mcdonalds.jpg");
         } else {
-          image.setAttribute("src", data.results[i].thumbnail);
+          if(data.results[i].thumbnail.charAt(4) != "s"){
+            var newURL = data.results[i].thumbnail.slice(0,4)+"s"+data.results[i].thumbnail.slice(4,37);
+            console.log(data.results[i].thumbnail);
+            // console.log(typeof(data.results[i].thumbnail));
+            // console.log(data.results[i].thumbnail.charAt(4));
+            console.log(newURL);
+            // console.log(typeof(newURL));
+
+
+            image.setAttribute("src", newURL);
+          } else {
+            image.setAttribute("src", data.results[i].thumbnail);
+          }
         }
 
         divResponse.setAttribute("id", "divResponse");
