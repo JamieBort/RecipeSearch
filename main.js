@@ -47,7 +47,11 @@ function searchFunction(){
   console.log(document.getElementById('searchFieldID').value);
   searchPhrase = document.getElementById('searchFieldID').value;
 
+  // test to see how long it takes to update. 12:50
+  // Below is used for when posting to gh-pages. It appears to work locally too.
   fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  // Below is used for the when working locally and on Heroku.
+  // fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
   .then(
     function(response){
       console.log("The response status is: ", response.status);
