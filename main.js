@@ -86,7 +86,7 @@ function searchFunction(){
 
           //   image.setAttribute("src", newURL);
           // } else {
-          //   image.setAttribute("src", data.results[i].thumbnail);
+            image.setAttribute("src", data.results[i].thumbnail);
           // }
         }
 
