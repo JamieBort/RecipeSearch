@@ -6,6 +6,9 @@ It was moved to this location here in order to host it on gh-pages and Heroku.
 ---
 ## Status
 
+** got it working ** using this website: https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+in the CommaDelimitedIngredients branch. (Need to merge those changed into master.)
+
 Mostly done with functionality.
 
 May want to make it look nice.
