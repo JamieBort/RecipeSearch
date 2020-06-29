@@ -19,6 +19,10 @@ See [To Do](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScrip
 3. Upload to Heroku.
 4. Come back to see how I can build out the functionality using their api. See `Optional Parameters` on the http://www.recipepuppy.com/about/api/ page.
 5. Update the description in the GitHub repository to include that this can be found via gh-pages. And via heroku.
+6. Improve the appearance.
+7. Make it accessbile for people with visual or hearing needs.
+
+### NOTE: After each release, update gh-pages and Heroku.
 
 ## Recources
 

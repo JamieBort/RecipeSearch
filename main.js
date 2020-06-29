@@ -49,7 +49,9 @@ function searchFunction(){
 
   // test to see how long it takes to update. 12:50
   // Below is used for when posting to gh-pages. It appears to work locally too.
-  fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  // fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  // fetch("https://recipepuppyproxy.herokuapp.com/api/?q=cheese")
+  fetch("https://cors-anywhere.herokuapp.com/http://recipepuppy.com/api/?q=omelet")
   // Below is used for the when working locally and on Heroku.
   // fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
   .then(
@@ -78,7 +80,7 @@ function searchFunction(){
         if(data.results[i].thumbnail==""){
           image.setAttribute("src", "./images/mcdonalds.jpg");
         } else {
-          // NOTE: added the lines below to address this error: "net::ERR_CERT_COMMON_NAME_INVALID"
+          // NOTE: Below lines are no longer needed. Added the lines below to address this error: "net::ERR_CERT_COMMON_NAME_INVALID"
           // if(data.results[i].thumbnail.charAt(4) != "s"){
           //   var newURL = data.results[i].thumbnail.slice(0,4)+"s"+data.results[i].thumbnail.slice(4,37);
           //   console.log(data.results[i].thumbnail);
