@@ -1,6 +1,6 @@
 ## Note:
-1. This repo was first created [here](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch). It was moved to it's own repo in order to host it on gh-pages and Heroku.
-2. 
+This repo was first created [here](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch). 
+It was moved to it's own repo in order to host it on gh-pages and Heroku.
 
 ---
 ## Status
@@ -26,7 +26,7 @@ The associated [Recipe Search](https://trello.com/c/gp44nJAM/966-recipe-search?m
 
 The associated [RecipeSearch](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch) GitHub repository directory.
 
-The gh-pages site: https://jamiebort.github.io/RecipeSearch/
+The [Recipe Search](https://jamiebort.github.io/RecipeSearch/) gh-pages site.
 
 The heroku site: [not yet up].
 
