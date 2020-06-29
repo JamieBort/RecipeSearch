@@ -47,7 +47,7 @@ function searchFunction(){
   console.log(document.getElementById('searchFieldID').value);
   searchPhrase = document.getElementById('searchFieldID').value;
 
-  fetch("http://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  fetch("https://crossorigin.me/https://www.recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
   .then(
     function(response){
       console.log("The response status is: ", response.status);
