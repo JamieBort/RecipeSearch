@@ -47,8 +47,8 @@ function searchFunction(){
   console.log(document.getElementById('searchFieldID').value);
   searchPhrase = document.getElementById('searchFieldID').value;
 
-  // test to see how long it takes to update. 12:48
-  fetch("https://crossorigin.me/https://www.recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
+  // test to see how long it takes to update. 12:50
+  fetch("https://recipepuppyproxy.herokuapp.com/api/?q=" + searchPhrase)
   .then(
     function(response){
       console.log("The response status is: ", response.status);
