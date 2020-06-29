@@ -74,19 +74,20 @@ function searchFunction(){
         if(data.results[i].thumbnail==""){
           image.setAttribute("src", "./images/mcdonalds.jpg");
         } else {
-          if(data.results[i].thumbnail.charAt(4) != "s"){
-            var newURL = data.results[i].thumbnail.slice(0,4)+"s"+data.results[i].thumbnail.slice(4,37);
-            console.log(data.results[i].thumbnail);
-            // console.log(typeof(data.results[i].thumbnail));
-            // console.log(data.results[i].thumbnail.charAt(4));
-            console.log(newURL);
-            // console.log(typeof(newURL));
+          // NOTE: added the lines below to address this error: "net::ERR_CERT_COMMON_NAME_INVALID"
+          // if(data.results[i].thumbnail.charAt(4) != "s"){
+          //   var newURL = data.results[i].thumbnail.slice(0,4)+"s"+data.results[i].thumbnail.slice(4,37);
+          //   console.log(data.results[i].thumbnail);
+          //   // console.log(typeof(data.results[i].thumbnail));
+          //   // console.log(data.results[i].thumbnail.charAt(4));
+          //   console.log(newURL);
+          //   // console.log(typeof(newURL));
 
 
-            image.setAttribute("src", newURL);
-          } else {
-            image.setAttribute("src", data.results[i].thumbnail);
-          }
+          //   image.setAttribute("src", newURL);
+          // } else {
+          //   image.setAttribute("src", data.results[i].thumbnail);
+          // }
         }
 
         divResponse.setAttribute("id", "divResponse");

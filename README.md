@@ -1,10 +1,8 @@
-** NOTE:** 
-all of this work is captured in this repo: 
-https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch
+## Note:
+1. This repo was first created [here](https://github.com/JamieBort/LearningDirectory/tree/master/JavaScript/Courses/TheIronYardAssignments/RecipeSearch). It was moved to it's own repo in order to host it on gh-pages and Heroku.
+2. 
 
-below is a duplicate of that repo's readme file.
 ---
-
 ## Status
 
 Mostly done with functionality.
